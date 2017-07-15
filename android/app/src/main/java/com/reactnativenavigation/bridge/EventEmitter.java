@@ -52,11 +52,4 @@ public class EventEmitter {
         }
         reactGateway.getReactEventEmitter().sendEvent(eventId, Arguments.createMap());
     }
-
-    public void sendAppLaunchedEvent() {
-        if (!NavigationApplication.instance.isReactContextInitialized()) {
-            return;
-        }
-        reactGateway.getReactEventEmitter().sendEvent("RNN.appLaunched", Arguments.createMap());
-    }
 }

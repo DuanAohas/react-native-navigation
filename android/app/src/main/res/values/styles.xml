@@ -13,4 +13,49 @@
     <style name="modalAnimations">
         <item name="android:windowExitAnimation">@anim/slide_down</item>
     </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="colorPrimary">@color/colorPrimary</item> &ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="colorPrimaryDark">@color/main_default_color</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="colorAccent">@color/colorAccent</item>&ndash;&gt;-->
+        <!--<item name="windowActionBar">false</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+    </style>
+
+    <!--<style name="NVApplication" parent="Theme.AppCompat.Light.DarkActionBar"  >  NoActionBar-->
+    <!--&lt;!&ndash;&lt;!&ndash; Customize your theme here. Light.DarkActionBar &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="colorPrimary">@color/colorPrimary</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;<item name="windowLightStatusBar">false</item>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="colorPrimaryDark">@color/main_default_color</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="colorAccent">@color/colorAccent</item>&ndash;&gt;-->
+    <!--</style>-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <style name="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/main_default_color</item>
+        <item name="colorPrimaryDark">@color/main_default_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowBackground">@color/main_default_color</item>-->
+        <!--<item name="android:background">@color/main_default_color</item>-->
+    </style>
+    <style name="AppTheme.NoActionBar.SplashActivity">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:background">@color/transparent</item>
+        <!--<item name="windowLightStatusBar">false</item>-->
+        <item name="colorPrimaryDark">@color/main_default_color</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+    <style name="AppTheme.NoActionBar.NvActivity">
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowBackground">@color/main_nv_bg_color</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:background">@color/main_default_color</item>-->
+    </style>
 </resources>

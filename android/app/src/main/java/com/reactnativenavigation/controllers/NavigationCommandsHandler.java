@@ -2,6 +2,7 @@ package com.reactnativenavigation.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class NavigationCommandsHandler {
 
-    private static final String ACTIVITY_PARAMS_BUNDLE = "ACTIVITY_PARAMS_BUNDLE";
+    public static final String ACTIVITY_PARAMS_BUNDLE = "ACTIVITY_PARAMS_BUNDLE";
 
     static ActivityParams parseActivityParams(Intent intent) {
         return ActivityParamsParser.parse(intent.getBundleExtra(NavigationCommandsHandler.ACTIVITY_PARAMS_BUNDLE));
@@ -45,9 +46,19 @@ public class NavigationCommandsHandler {
         NavigationApplication.instance.startActivity(intent);
     }
 
+    public static void startAppSingleTask(Bundle params) {
+        Intent intent = new Intent(NavigationApplication.instance, NavigationActivity.class);
+        IntentDataHandler.onStartApp(intent);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(ACTIVITY_PARAMS_BUNDLE, params);
+        NavigationApplication.instance.startActivity(intent);
+    }
+
+
     public static void push(Bundle screenParams) {
         final NavigationActivity currentActivity = NavigationActivity.currentActivity;
         if (currentActivity == null) {
+            Log.d("push null", screenParams.toString());
             return;
         }
 
@@ -164,6 +175,7 @@ public class NavigationCommandsHandler {
     public static void showModal(final Bundle params) {
         final NavigationActivity currentActivity = NavigationActivity.currentActivity;
         if (currentActivity == null) {
+            Log.d("showModal null", params.toString());
             return;
         }
 
@@ -534,10 +546,5 @@ public class NavigationCommandsHandler {
             return;
         }
         promise.resolve(OrientationHelper.getOrientation(currentActivity));
-    }
-
-    public static void isAppLaunched(Promise promise) {
-        final boolean isAppLaunched = SplashActivity.isResumed || NavigationActivity.currentActivity != null;
-        promise.resolve(isAppLaunched);
     }
 }

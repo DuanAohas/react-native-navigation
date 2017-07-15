@@ -119,6 +119,7 @@ public class Modal extends Dialog implements DialogInterface.OnDismissListener, 
         layout = new ModalScreenLayout(getActivity(), screenParams, this);
         setWindowFlags();
         setOrientation(screenParams.styleParams.orientation);
+//        setOrientation(Orientation.Portrait);// 禁止屏幕翻转
         setContentView(layout.asView());
     }
 
@@ -198,6 +199,7 @@ public class Modal extends Dialog implements DialogInterface.OnDismissListener, 
     }
 
     private void setOrientation(Orientation orientation) {
+//        screenParams.styleParams.orientation = Orientation.Portrait;// 禁止屏幕翻转
         getActivity().setRequestedOrientation(orientation.orientationCode);
     }
 }

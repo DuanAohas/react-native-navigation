@@ -2,4 +2,10 @@
 <resources>
     <string name="drawer_close">Drawer Close</string>
     <string name="drawer_open">Drawer Open</string>
+
+    <!--进度条公共控件-->
+    <string name="progress_text">加载中</string>
+    <string name="exit_info">再次点击,退出</string>
+    <!--<string name="growingio_project_id">b1843cfc97e9c98c</string>-->
+    <!--<string name="growingio_url_scheme">growing.a3ed2fc915782055</string>-->
 </resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
+    android:scaleType="centerCrop">
+    <RelativeLayout
+        android:id="@+id/nv_nagitation_rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center|top">
+
+    </RelativeLayout>
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_splash"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@mipmap/splash" />-->
+    <!--&lt;!&ndash;<com.ktsedu.code.widget.CountDownView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/countDownView"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="120px"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="120px"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentTop="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginRight="50px"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_marginTop="30px"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:visibility="visible"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:background_color="#22000000"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:border_color="#2ddfa7"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:border_width="2dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:text_size="12dp" />&ndash;&gt;-->
+
+</RelativeLayout>

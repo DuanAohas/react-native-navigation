@@ -19,8 +19,8 @@ public class OrientationHelper {
     }
 
     public static void onConfigurationChanged(Configuration newConfig) {
-        WritableMap params = Arguments.createMap();
-        params.putString("orientation", Orientation.fromConfigurationCode(newConfig.orientation));
-        NavigationApplication.instance.getEventEmitter().sendNavigatorEvent("orientationChanged", params);
+        // WritableMap params = Arguments.createMap();
+        // params.putString("orientation", Orientation.fromConfigurationCode(newConfig.orientation));
+        // NavigationApplication.instance.getEventEmitter().sendNavigatorEvent("orientationChanged", params);
     }
 }

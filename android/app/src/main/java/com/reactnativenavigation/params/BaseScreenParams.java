@@ -2,10 +2,10 @@ package com.reactnativenavigation.params;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class BaseScreenParams {
+public class BaseScreenParams implements Serializable{
     public String screenId;
     public String title;
     public String subtitle;

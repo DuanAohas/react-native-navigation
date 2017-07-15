@@ -12,16 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScreenParamsParser extends Parser {
-    private static final String KEY_TITLE = "title";
-    private static final String KEY_SUBTITLE = "subtitle";
-    private static final String KEY_SCREEN_ID = "screenId";
-    private static final String KEY_NAVIGATION_PARAMS = "navigationParams";
-    private static final String STYLE_PARAMS = "styleParams";
-    private static final String TOP_TABS = "topTabs";
-    private static final String FRAGMENT_CREATOR_CLASS_NAME = "fragmentCreatorClassName";
-    private static final String FRAGMENT_CREATOR_PASS_PROPS = "fragmentCreatorPassProps";
-    private static final String OVERRIDE_BACK_PRESS = "overrideBackPress";
-    private static final String ANIMATION_TYPE = "animationType";
+    public static final String KEY_TITLE = "title";
+    public static final String KEY_SUBTITLE = "subtitle";
+    public static final String KEY_SCREEN_ID = "screenId";
+    public static final String KEY_NAVIGATION_PARAMS = "navigationParams";
+    public static final String STYLE_PARAMS = "styleParams";
+    public static final String TOP_TABS = "topTabs";
+    public static final String FRAGMENT_CREATOR_CLASS_NAME = "fragmentCreatorClassName";
+    public static final String FRAGMENT_CREATOR_PASS_PROPS = "fragmentCreatorPassProps";
+    public static final String OVERRIDE_BACK_PRESS = "overrideBackPress";
+    public static final String ANIMATION_TYPE = "animationType";
 
     @SuppressWarnings("ConstantConditions")
     public static ScreenParams parse(Bundle params) {

@@ -42,7 +42,7 @@ class JsDevReloadListenerReplacer {
         private ReactInstanceDevCommandsHandler originalReactHandler;
         private final Listener listener;
 
-        DevCommandsHandlerProxy(ReactInstanceDevCommandsHandler originalReactHandler, Listener listener) {
+        public DevCommandsHandlerProxy(ReactInstanceDevCommandsHandler originalReactHandler, Listener listener) {
             this.originalReactHandler = originalReactHandler;
             this.listener = listener;
         }

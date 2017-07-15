@@ -2,10 +2,18 @@ package com.reactnativenavigation.views;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.LayerDrawable;
+import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.reactnativenavigation.R;
 import com.reactnativenavigation.animation.VisibilityAnimator;
 import com.reactnativenavigation.params.AppStyle;
 import com.reactnativenavigation.params.ScreenParams;
@@ -24,10 +32,50 @@ public class BottomTabs extends AHBottomNavigation {
         setForceTint(true);
         setId(ViewUtils.generateViewId());
         createVisibilityAnimator();
+        this.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);// 增加显示标题  *********
+        setBehaviorTranslationEnabled(false);
+        setTranslucentNavigationEnabled(true);
         setStyle();
         setFontFamily();
-    }
+//        setClipToPadding(true);
 
+//                //此片为了增加 底部栏上边的一条线
+//        LinearLayout bottomLayout = new LinearLayout(context);
+//        bottomLayout.setOrientation(LinearLayout.VERTICAL);
+//        bottomLayout.setGravity(Gravity.CENTER);
+
+//        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, WRAP_CONTENT);
+
+//        LinearLayout lineLayout = new LinearLayout(context);
+//        lineLayout.setOrientation(LinearLayout.VERTICAL);
+//        lineLayout.setGravity(Gravity.CENTER);
+//        lineLayout.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+//        LayoutParams layoutlineParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 5);
+
+//        bottomLayout.setBackgroundColor(getResources().getColor(R.color.main_nv_bg_color));
+//        bottomLayout.addView(lineLayout,layoutlineParams);
+//        this.addView(lineLayout,layoutlineParams);
+//        bottomLayout.addView(bottomTabs,lp);
+
+        //        addView(bottomLayout, layoutParams);
+
+//        setClipChildren(false);
+//        this.setBackground(getResources().getDrawable(R.drawable.main_nv_bottom_bg_topline));
+        //创建Drawable
+//        GradientDrawable whiteDrawable = getGraDra(getActivity(), R.color.main_nv_bg_color,2);
+//        GradientDrawable grayDrawable =getGraDra(getActivity(),R.color.colorAccent,2);
+//        LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{grayDrawable,whiteDrawable});
+//        //设置padding
+//        layerDrawable.setLayerInset(1,0,3,0,0);
+//        //设置drawable为背景
+//        ViewCompat.setBackground(this,layerDrawable);
+    }
+//    public static GradientDrawable getGraDra(Context context, int colID, int dp) {
+//        GradientDrawable drawable = new GradientDrawable();
+//        drawable.setColor(context.getResources().getColor(colID));
+//        drawable.setCornerRadius(dp);
+//        return drawable;
+//    }
     public void addTabs(List<ScreenParams> params, OnTabSelectedListener onTabSelectedListener) {
         for (ScreenParams screenParams : params) {
             AHBottomNavigationItem item = new AHBottomNavigationItem(screenParams.tabLabel, screenParams.tabIcon,

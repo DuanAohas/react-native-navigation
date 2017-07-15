@@ -86,7 +86,7 @@ public class StyleParamsParser {
     }
 
     private String getDefaultOrientation() {
-        return AppStyle.appStyle == null ? null : AppStyle.appStyle.orientation.name;
+        return AppStyle.appStyle == null ? Orientation.Portrait.name: AppStyle.appStyle.orientation.name;//修改  默认屏幕翻转类型为坚屏
     }
 
     private StyleParams createDefaultStyleParams() {

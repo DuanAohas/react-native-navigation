@@ -2,14 +2,21 @@ apply plugin: 'com.android.library'
 apply from: '../prepare-robolectric.gradle'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+
+//        resValue("string", "growingio_project_id", "b1843cfc97e9c98c")
+//        resValue("string", "growingio_url_scheme", "growing.a3ed2fc915782055")
     }
     buildTypes {
         release {
@@ -23,6 +30,17 @@ android {
         abortOnError false
     }
 
+    sourceSets {
+        main {//           manifest.srcFile 'AndroidManifest.xml'
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+            res.srcDirs = ['src/main/res']
+//            assets.srcDirs = ['src/main/assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     testOptions {
         unitTests.all { t ->
             reports {
@@ -45,20 +63,30 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: "libs", include: ["*.jar"])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:design:25.3.+'
+    compile 'com.android.support:appcompat-v7:25.3.+'
+    compile 'com.android.support:support-v4:25.3.+'
 
-	compile 'com.android.support:design:25.3.1'
-    compile "com.android.support:appcompat-v7:25.3.1"
+    //    compile 'com.android.support:appcompat-v7:25.2.+'
+    compile 'com.android.support:cardview-v7:25.3.+'
+
+    //    compile 'com.android.support:design:25.2.+'
+
+    //    compile 'com.android.support:support-v7:latest.integration'
+    compile 'com.android.support:gridlayout-v7:25.3.+'
+    compile 'com.android.support:recyclerview-v7:25.3.+'
+    compile 'com.android.support:palette-v7:25.3.+'
 
     // node_modules
-    compile "com.facebook.react:react-native:+"
-
-    // third party
-    compile "com.aurelhubert:ahbottomnavigation:2.0.6"
-    compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.4'
-
-    // tests
-    testCompile "junit:junit:4.12"
-    testCompile "org.robolectric:robolectric:3.1.4"
-    testCompile 'org.assertj:assertj-core:2.5.0'
+    compile 'com.facebook.react:react-native:+'
+ 
+    compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.5' 
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.3.2'
+    testCompile 'org.assertj:assertj-core:3.6.2'
+//    compile project(':systembar')
+    compile project(':ahbottomnavigation')
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile files('libs/alipaySingle-20161222.jar') 
 }
